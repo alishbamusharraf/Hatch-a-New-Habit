@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HabitHatch 🐣</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg">
+    <div class="form-container">
+        <h1>🐣 Hatch a New Habit</h1>
+        <form action="/create" method="POST">
+            <input name="name" placeholder="Habit Name" required>
+            <input name="goal" type="number" placeholder="Goal (days)" required>
+            <button type="submit">Add Habit</button>
+        </form>
+    </div>
+</body>
+</html>

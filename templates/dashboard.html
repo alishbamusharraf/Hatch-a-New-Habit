@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - HabitHatch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg">
+    <div class="form-container">
+        <h2>🎯 Your Habits</h2>
+        {% for habit in habits %}
+        <div class="habit-card">
+            <h3>{{ habit.name }}</h3>
+            <p>Progress: {{ habit.progress }} / {{ habit.goal }}</p>
+            {% if habit.is_hatched() %}
+                <p>✅ Hatched!</p>
+            {% else %}
+                <a href="/update/{{ loop.index0 }}">Mark Progress ➕</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <a href="/">🔙 Back</a>
+    </div>
+</body>
+</html>
